@@ -1,11 +1,14 @@
 import { FC } from 'react'
-import { Text, View } from 'react-native'
+
+import Layout from '@/components/ui/layout/Layout'
+
+import Header from './Header'
 
 const Home: FC = () => {
 	return (
-		<View>
-			<Text>Home</Text>
-		</View>
+		<Layout>
+			<Header />
+		</Layout>
 	)
 }
 

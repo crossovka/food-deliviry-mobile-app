@@ -1,4 +1,4 @@
-// import Cart from '@/components/screens/cart/Cart'
+import Cart from '@/components/screens/cart/Cart'
 // import Category from '@/components/screens/category/Category'
 import Explorer from '@/components/screens/explorer/Explorer'
 import Favorites from '@/components/screens/favorites/Favorites'
@@ -19,7 +19,7 @@ export const routes: IRoute[] = [
 	{
 		name: 'Auth',
 		component: Auth
-	}
+	},
 	{
 		name: 'Favorites',
 		component: Favorites
@@ -36,10 +36,10 @@ export const routes: IRoute[] = [
 		name: 'Profile',
 		component: Profile
 	},
-	// {
-	// 	name: 'Cart',
-	// 	component: Cart
-	// },
+	{
+		name: 'Cart',
+		component: Cart
+	},
 	// {
 	// 	name: 'Category',
 	// 	component: Category

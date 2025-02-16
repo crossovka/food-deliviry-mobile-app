@@ -13,8 +13,7 @@ import { useCheckAuth } from '@/providers/auth/useCheckAuth'
 import PrivateNavigator from './PrivateNavigator'
 
 const Navigation: FC = () => {
-	const { user } = useAuth()
-
+	const { user, setNavigation } = useAuth() // Получаем setNavigation
 	const [currentRoute, setCurrentRoute] = useState<string | undefined>(
 		undefined
 	)
@@ -22,6 +21,7 @@ const Navigation: FC = () => {
 	const navRef = useNavigationContainerRef()
 
 	useEffect(() => {
+		setNavigation(navRef) // Передаем навигацию в контекст
 		setCurrentRoute(navRef.getCurrentRoute()?.name)
 
 		const listener = navRef.addListener('state', () =>
@@ -31,7 +31,7 @@ const Navigation: FC = () => {
 		return () => {
 			navRef.removeListener('state', listener)
 		}
-	}, [])
+	}, [setNavigation])
 
 	useCheckAuth(currentRoute)
 
