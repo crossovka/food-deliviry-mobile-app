@@ -1,10 +1,10 @@
 import Cart from '@/components/screens/cart/Cart'
-// import Category from '@/components/screens/category/Category'
+import Category from '@/components/screens/category/Category'
 import Explorer from '@/components/screens/explorer/Explorer'
 import Favorites from '@/components/screens/favorites/Favorites'
 import Home from '@/components/screens/home/Home'
 import Auth from '@/components/screens/auth/Auth'
-// import Product from '@/components/screens/product/Product'
+import Product from '@/components/screens/product/Product'
 import Profile from '@/components/screens/profile/Profile'
 import Search from '@/components/screens/search/Search'
 // import Thanks from '@/components/screens/thanks/Thanks'
@@ -40,14 +40,14 @@ export const routes: IRoute[] = [
 		name: 'Cart',
 		component: Cart
 	},
-	// {
-	// 	name: 'Category',
-	// 	component: Category
-	// },
-	// {
-	// 	name: 'Product',
-	// 	component: Product
-	// },
+	{
+		name: 'Category',
+		component: Category
+	},
+	{
+		name: 'Product',
+		component: Product
+	},
 	// {
 	// 	name: 'Thanks',
 	// 	component: Thanks

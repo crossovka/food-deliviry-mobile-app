@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
+
+import Layout from '@/components/ui/layout/Layout'
 
 const Favorites: FC = () => {
 	return (
-		<View>
+		<Layout>
 			<Text>Favorites</Text>
-		</View>
+		</Layout>
 	)
 }
 

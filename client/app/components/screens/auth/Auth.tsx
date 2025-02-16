@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Pressable, Text, View } from 'react-native'
 
-import Loader from '@/components/ui/Lodaer'
+import Loader from '@/components/ui/Loader'
 import Button from '@/components/ui/button/Button'
 
 import { IAuthFormData } from '@/types/auth.interface'

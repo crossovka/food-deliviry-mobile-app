@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
+
+import Layout from '@/components/ui/layout/Layout'
 
 const Search: FC = () => {
 	return (
-		<View>
+		<Layout>
 			<Text>Search</Text>
-		</View>
+		</Layout>
 	)
 }
 

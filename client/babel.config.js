@@ -9,11 +9,14 @@ module.exports = function (api) {
 			[
 				'babel-plugin-root-import',
 				{
-					root: './',
+					root: __dirname, // Изменено, чтобы root был client/
+					alias: {
+						'@': './app', // Если хочешь оставить @ для app
+						'@assets': './assets' // Новый alias для assets
+					},
 					extensions: ['.js', '.jsx', '.ts', '.tsx']
 				}
 			]
-			// Add other plugins if necessary
 		]
 	}
 }

@@ -3,12 +3,12 @@ import { Text } from 'react-native'
 
 import Layout from '@/components/ui/layout/Layout'
 
-const Explorer: FC = () => {
+const Product: FC = () => {
 	return (
 		<Layout>
-			<Text>Explorer</Text>
+			<Text>Product</Text>
 		</Layout>
 	)
 }
 
-export default Explorer
+export default Product
