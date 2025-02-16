@@ -1,3 +1,10 @@
-import { IUser } from "./auth.interface";
+import { IProduct } from './product.interface'
 
-export interface IAuthFormData extends Pick<IUser, 'email' | 'password'>
+export interface IUser {
+	id: string
+	email: string
+	password: string
+	name: string
+	avatarPath: string
+	favorites: IProduct[]
+}

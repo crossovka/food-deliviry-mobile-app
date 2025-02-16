@@ -1,37 +1,57 @@
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 
 import Loader from '@/components/ui/Lodaer'
+import Button from '@/components/ui/button/Button'
 
-import { useTypedNavigation } from '@/hooks/useTypedNavigation'
+import { IAuthFormData } from '@/types/auth.interface'
 
-import { IAuthFormData } from '@/types/user.interface'
+import AuthFields from './AuthFields'
+import { useAuthMutations } from './useAuthMutations'
 
 const Auth: FC = () => {
-	const navigation = useTypedNavigation()
-
 	const [isReg, setIsReg] = useState(false)
 
 	const { handleSubmit, reset, control } = useForm<IAuthFormData>({
 		mode: 'onChange'
 	})
 
-	const omSubmit: SubmitHandler<IAuthFormData> = data => {
-		console.log(data)
-	}
+	const { isLoading, registerSync, loginSync } = useAuthMutations(reset)
 
-	const isLoading = false
+	const onSubmit: SubmitHandler<IAuthFormData> = data => {
+		if (isReg) registerSync(data)
+		else loginSync(data)
+	}
 
 	return (
 		<View className='mx-2 items-center justify-center h-full'>
 			<View className='w-9/12'>
-				<Text className='text-center text-red text-3xl font-medium mb-8'>
-					{isReg ? 'Sign up' : 'sign in'}
+				<Text className='text-center text-black text-3xl font-medium mb-8'>
+					{isReg ? 'Sign Up' : 'Login'}
 				</Text>
-				{isLoading ? <Loader /> : <>
-				
-				</>}
+				{isLoading ? (
+					<Loader />
+				) : (
+					<>
+						<AuthFields control={control} isPassRequired />
+
+						<Button onPress={handleSubmit(onSubmit)}>
+							{isReg ? 'Sign Up' : 'Login'}
+						</Button>
+
+						<Pressable onPress={() => setIsReg(!isReg)}>
+							<Text className='text-black text-center text-base mt-6'>
+								{isReg
+									? 'Already have an account? '
+									: "Don't have an account? "}
+								<Text className='text-[#47AA52]'>
+									{isReg ? 'Login' : 'Sign up'}
+								</Text>
+							</Text>
+						</Pressable>
+					</>
+				)}
 			</View>
 		</View>
 	)
