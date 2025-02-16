@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { Image, View } from 'react-native'
 
+import Layout from '@/components/layout/Layout'
 import Heading from '@/components/ui/Heading'
 import Button from '@/components/ui/button/Button'
-import Layout from '@/components/ui/layout/Layout'
 
 import { useAuth } from '@/hooks/useAuth'
 

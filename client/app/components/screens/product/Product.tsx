@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Text } from 'react-native'
 
-import Layout from '@/components/ui/layout/Layout'
+import Layout from '@/components/layout/Layout'
 
 const Product: FC = () => {
 	return (

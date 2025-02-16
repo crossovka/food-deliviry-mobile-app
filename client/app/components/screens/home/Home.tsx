@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import Layout from '@/components/ui/layout/Layout'
+import Layout from '@/components/layout/Layout'
 
 import Header from './Header'
 import Banner from './banner/Banner'
