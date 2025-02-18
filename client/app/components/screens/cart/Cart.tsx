@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import { Text } from 'react-native'
 
 import Layout from '@/components/layout/Layout'
+import Heading from '@/components/ui/Heading'
 
 const Cart: FC = () => {
 	return (
 		<Layout>
-			<Text>Cart</Text>
+			<Heading>Cart</Heading>
 		</Layout>
 	)
 }
